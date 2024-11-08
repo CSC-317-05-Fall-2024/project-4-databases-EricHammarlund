@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Düsseldorf Travel - Restaurants</title>
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+    <link rel="icon" type="image/png" href="images/icon.png">   <!-- added to display favicon in safari; not necessary, but I use safari often and it bothered me that the icon didn't show up-->
+    <link rel="stylesheet" href="/styles.css">
+    <script defer src="/scripts/header.js"></script> <!-- defer header.js file for header, nav and footer-->
+    <script defer src="/scripts/restaurantCards.js"></script>
+
+</head>
+
+<body> <!-- adjusted to use the header, nav and footer from header.js; adjusted to use restaurants.js and restaurantCards.js to populate card information-->
+    <header></header>
+    <nav></nav>
+    <div class="restaurant-container"> <!--outer restaurant container to give general grid structure-->
+        <% for (let i=0; i< restaurants.length; i++) { %>  <!-- Using a for loop to access each restaurant element in restaurants (data) restaurant of restaurants) {%>-->
+        <div class="restaurant-card" id="<%=restaurants[i].id%>"> <!-- give each restaurant card its restaurant-card class and unique restaurant id based on current restaurant in restaurants list -->
+            <img class="restaurantImg" src="<%=restaurants[i].image %>"/> <!-- specific properties needed that are in each restaurants object within the restaurants array can be accessed via dot operator for a given restaurant instance -->
+            <p class="restaurantInfo"><%= restaurants[i].name %><br><br> <%= restaurants[i].address %><br> <%= restaurants[i].phone %></p> <!--- accessing each instance's name, address and phone -->
+            <button class="delete-button">x</button>
+        </div>
+        <% } %> <!-- end for loop -->
+    </div>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Düsseldorf Travel - New Restaurant Form</title>
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+    <link rel="icon" type="image/png" href="images/icon.png">   <!-- added to display favicon in safari; not necessary, but I use safari often and it bothered me -->
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts/header.js"></script> <!-- defer header.js file for header, nav and footer-->
+    <script defer src="scripts/restaurantSubmit.js"></script> <!-- defer restaurantSubmit.js file for new restaurant form handling (default form behavior is not correct for our needs)-->
+</head>
+<body> <!-- adjusted to use the header, nav and footer from header.js -->
+    <header></header>
+    <nav></nav>
+    
+    <h1 id="restaurant-form-header1">New Restaurant Form</h1> <!-- Header for Restaurant Form page-->
+    <div class="form-container">    <!-- Outer form container-->
+        <form>  <!-- Actual form with labels and input fields -->
+            <label for="restName">Restaurant Name:</label><br>
+            <input type="text" id="restName" name="restName"><br><br>
+            <label for="restAddress">Address:</label><br>
+            <input type="text" id="restAddress" name="restAddress"><br><br>
+            <label for="restPhone">Phone Number:</label><br>
+            <input type="text" id="restPhone" name="restPhone"><br><br>
+            <label for="restPhoto">Photo URL:</label><br>
+            <input type="text" id="restPhoto" name="restPhoto"><br><br>
+            <button type="submit"> Submit </button>
+          </form>
+    </div>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;                 /* Ensures padding and borders are included in the width and height */
+}
+
+/* header / banner style */
+header {
+    height: 450px;                          /* Fix the height of the header */
+    width: 100%;                            /* Full width */
+    overflow: hidden;                       /* Ensures any overflow in the header is hidden; this way the aspect ratio is not changed, but the header has a fixed size (without having to know sizes of the original image) */
+}
+
+.header-img {
+    width: 100%;                            /* Make image cover the full width */
+    height: 100%;                           /* Ensure height matches the container height */
+    object-fit: cover;                      /* Crop the top and bottom while keeping the aspect ratio */
+    object-position: 50% 35%;               /* Centers the image horizontally, but adjusts height vertically, so we crop the top and bottom differently - used trial and error to adjust vertical height so the header image was cropped to my liking */
+}
+
+/* navbar style */ 
+.navbar {
+    display: flex;                          /* Using flex */
+    flex-direction: row;                    /* Elements ordered in a row */
+    justify-content: space-around;          /* Can use space-between or space-evenly; space-around looked best to me */
+    background-color: darkgrey;           /* set background color */
+    padding: 10px 0px;                      /* Set padding on top and bottom of nav bar; no padding needed on sides because flex space-around formatting is sufficient*/
+}
+
+nav a {                                 
+    color: orangered;                     /* Set font color of links in navbar*/
+    font-family: futura;                    /* Set font family to futura to match header title */
+    text-decoration: none;                  /* Used to remove underline; looked cleaner in my opinion */
+}
+
+/* general body style */
+body {
+    font-family: helvetica;                 /* Set default body faunt to helvetic; matches sans serif style of future, but looked cleaner */
+    margin: 0;                              /* No margin by default in body (just a safety measure, maybe not necessary) */
+    padding: 0;                             /* No padding by default in body (just a safety measure, maybe not necessary)*/
+}
+
+/* Home Page */
+.city-introduction {
+    display: flex;                          /* Set flex */
+    flex-direction: column;                 /* Stack the image and paragraph vertically */
+    justify-content: center;                /* Centers vertically */
+    align-items: center;                    /* Centers horizontally */
+    padding: 20px;                          /* Padding around the content */
+    text-align: center;                     /* Center text inside this section */
+}
+
+.city-img {
+    width: 50%;                             /* Adjust the size as needed; manually set to my liking*/
+    height: auto;                           /* Maintain aspect ratio */
+    margin-bottom: 20px;                    /* Add space below the image */
+}
+
+#aboutDusseldorf {
+    max-width: 650px;                       /* Limit the width of the paragraph to keep it readable */
+    margin: 0 auto;                         /* Centers the paragraph horizontally */
+    font-size: 16px;                        /* Set font size to look good on page */
+    line-height: 1.6;                       /* Set line spacing - looked cleaner with more spacing*/
+    text-align: justify;                     /* Centers the text inside the paragraph */
+}
+
+/* Attractions Page */
+.city-attractions {
+    display: flex;                          /* Set flex */
+    flex-direction: column;                 /* Stack the image and paragraph vertically */
+    justify-content: center;                /* Centers vertically */
+    align-items: center;                    /* Centers horizontally */
+    gap: 50px;                              /* Adjust gap between attraction - adjusted until it looks cleaner on the page (without deviating from wirefram provided too much) */
+    padding: 20px;                          /* Padding around the content */
+    margin: 0 150px;                        /* Set margin around on the sides to space from side of page to my liking */
+    text-align: center;                     /* Center text inside this section */
+}
+.attraction {
+    display: flex;                          /* Set flex ; make the image and caption sit side by side */
+    flex-direction: row;                    /* Ensure horizontal layout by using flex direction as row */
+    align-items: flex-start;                /* Align content at the top */
+    justify-content: space-between;         /* Optional: space between the image and caption */
+    gap: 20px;                              /* Space between image and text */
+    padding: 20px 0;                        /* Adds space above and below this section */
+}
+
+.attraction-image {
+    width: 400px;                           /* Set attraction width manually  to my liking */
+    height: 300px;                          /* Set attraction height manually to my liking */
+    object-fit: cover;                      /* Crop the top and bottom over the spec dimensions */
+    overflow: hidden;                       /* Guarantees any overflow that results from resizing, padding, or margins gets hidden. */
+}
+
+.caption {
+    width: 55%;                             /* Adjust to control the width of the caption text */
+    text-align: justify;                       /* Align text inside the caption */
+}
+
+.caption h3 {
+    margin: 0;                              /* Remove default margins */
+    font-size: 24px;                        /* Adjust the heading size */
+}
+
+.caption p {
+    margin-top: 10px;                       /* Add space between the heading and paragraph */
+    font-size: 16px;                        /* Adjust the paragraph font size */
+    line-height: 1.6;                       /* Improve readability */
+    width: 600px;                           /* Manually set caption text width to look aesthetic */
+}
+
+/* Restaurants Page */
+.restaurant-container {
+    display: grid;                          /* Set grid for 'card' layout on restaurant page */
+    grid-template-columns: repeat(3, 1fr);  /* 3 equal-width columns */
+    grid-gap: 20px;                         /* Space between the cards */
+    padding: 20px;                          /* Set padding for overall grid */
+    justify-items: center;                  /* Center overall grid */ 
+    margin: auto 200px;                     /* Set side margins to match wireframe and look pleasant */
+}
+
+.restaurant-card {
+    display: flex;                          /* Set flex within the overall grid structure to make each individual card have a sub-structure */
+    flex-direction: column;                 /* Set flex direciton to column to stack the image and caption column-wise */
+    align-items: center;                    /* Center within card */
+    width: 250px;                           /* Fixed width for all cards */
+    background-color: lightgrey;          /* Give cards lightgrey background color */
+    padding: 10px;                          /* Set padding between inner content of card and edge */
+    border-radius: 8px;                     /* Round edges - optional, but we did this for the spotify demo and I liked the look on the cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   /* Set slight shadow for cards; creates a 3D effect - Found this on stack overflow and liked the way it looked */
+}
+
+.restaurantImg {
+    width: 200px;                           /* Set restaurant card image width */
+    height: 200px;                          /* Set restraurant card image height */
+    object-fit: cover;                      /* Crop the top and bottom over the spec dimensions */
+    overflow: hidden;                       /* Guarantees any overflow that results from resizing, padding, or margins gets hidden. */
+}
+
+.restaurantInfo {
+    margin-top: 10px;                       /* Set top margin */
+    font-size: 14px;                        /* Slightly smaller font for better fit */
+    text-align: center;                     /* Align text center */
+    color: orangered;                     /* Set text color on cards to orangered to match navbar */
+    word-wrap: break-word;                  /* Ensure text wraps within the card */
+    width: 200px;                           /* Set card text component width to 200px to match img */
+}
+
+.delete-button {
+    margin-left: auto;                      /* Set left margin to auto to move delete button to right edge */
+    margin-bottom: 0%;                      /* Set bottom margin to 0; aesthetic choice */
+    font-size: 16pt;                        /* Set font size of button (X) to 16pt; aesthetic choice */
+}
+
+/* New Restaurant Form page */
+#restaurant-form-header1 {
+    text-align: center;                     /* Align header text to center to match sample */
+    font-size: 36pt;                        /* Set font size to 36pt; aesthetic choice */
+}
+
+.form-container {
+    display: flex;                          /* Set form container to flex for formatting */
+    justify-content: center;                /* Justify form center to match provided sample */
+    font-size: 16pt;                        /* Set form default font size to 16pt */
+    text-align: center;                     /* Align text center by default within form */
+    line-height: 1.6;                       /* Adjust line spacing using line-height; aesthetic choice */
+    min-height: 100vh;                      /* Set min height of form container to 100 view height to push footer to bottom */
+}
+
+input {
+    border: 1px solid #000;               /* Set input field border properties to make box more visibible; design choice */
+    font-size: 12pt;                        /* Set input field font size */
+    width: 500px;                           /* Set width of input box; aesthetic choice & generally matches provided sample */
+}
+
+button {
+    font-size: 14pt;                        /* Set form button font size */
+    border-radius: 2px;                     /* Adjust button shape; aesthetic choice */
+}
+
+/* footer style */
+footer {
+    position: relative;                     /* Set footer at bottom, under body */
+    background-color: darkgrey;           /* Set footer background color to match navbar background color */
+    padding: 10px;                          /* Set footer padding to 10px on all sides */
+    padding-right: 50px;                    /* Adds space to the right for the text */
+    text-align: right;                      /* Having footer text on right side to match wireframe */
+    color: orangered;                     /* Set text color to orangered to match other text elements like restaurant cards and navbar */
+    font-family: futura;                    /* Set footer font to futura to match header and navbar */
+    width: 100%;                            /* Ensure footer width is entire window (and due to border-box, this includes any additional margins, padding etc. */
+    box-sizing: border-box;                 /* Ensures padding and borders are included in the width and height */
+}
+
+
